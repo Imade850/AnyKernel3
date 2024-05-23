@@ -15,9 +15,9 @@ device.name2=
 device.name3=
 device.name4=
 device.name5=
-supported.versions=
-supported.patchlevels=
-supported.vendorpatchlevels=
+supported.versions=13 - 14
+supported.patchlevels=2023-11 -
+supported.vendorpatchlevels=2023 - 06
 '; } # end properties
 
 
@@ -30,7 +30,7 @@ set_perm_recursive 0 0 750 750 $RAMDISK/init* $RAMDISK/sbin;
 
 # boot shell variables
 BLOCK=/dev/block/by-name/boot;
-IS_SLOT_DEVICE=1;
+IS_SLOT_DEVICE=auto;
 RAMDISK_COMPRESSION=auto;
 PATCH_VBMETA_FLAG=auto;
 
@@ -38,7 +38,7 @@ PATCH_VBMETA_FLAG=auto;
 . tools/ak3-core.sh;
 
 # boot install
-dump_boot; # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
+split_boot; # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
 
 # init.rc
 backup_file init.rc;
