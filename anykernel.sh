@@ -38,7 +38,7 @@ PATCH_VBMETA_FLAG=auto;
 . tools/ak3-core.sh;
 
 # boot install
-split_boot; # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
+dump_boot; # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
 
 # init.rc
 backup_file init.rc;
